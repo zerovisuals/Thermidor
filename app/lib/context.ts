@@ -35,14 +35,17 @@ export async function createHydrogenRouterContext(
   /**
    * Open a cache instance in the worker and a custom session instance.
    */
+  // The session only carries a Shopify cart id, and the bag is still local, so a missing secret
+  // shouldn't take the whole site down. Set SESSION_SECRET before connecting real carts or accounts.
   if (!env?.SESSION_SECRET) {
-    throw new Error('SESSION_SECRET environment variable is not set');
+    console.warn('SESSION_SECRET is not set; using a fallback. Set it before connecting Shopify carts or accounts.');
   }
+  const secret = env?.SESSION_SECRET || 'thermidor-fallback-session-secret';
 
   const waitUntil = executionContext.waitUntil.bind(executionContext);
   const [cache, session] = await Promise.all([
     caches.open('hydrogen'),
-    AppSession.init(request, [env.SESSION_SECRET]),
+    AppSession.init(request, [secret]),
   ]);
 
   const hydrogenContext = createHydrogenContext(
