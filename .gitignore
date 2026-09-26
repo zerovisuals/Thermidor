@@ -9,3 +9,5 @@ dist
 *.log
 tsconfig.tsbuildinfo
 .DS_Store
+.dev.vars
+.wrangler
