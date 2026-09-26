@@ -2,7 +2,7 @@
 // so the Hydrogen build runs here as-is: dist/server is the worker, dist/client the static files.
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "thermidor",
+  "name": "shop",
   "main": "dist/server/index.js",
   "compatibility_date": "2025-09-01",
   "assets": {"directory": "dist/client"},
