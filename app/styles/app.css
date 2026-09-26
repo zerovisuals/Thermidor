@@ -1,0 +1,433 @@
+/* ============ THERMIDOR — tokens ============ */
+@font-face {
+  font-family: 'Funnel Sans';
+  src: url('/fonts/FunnelSans.woff2') format('woff2');
+  font-weight: 300 800;
+  font-display: swap;
+}
+
+:root {
+  /* palette: 85% white + ink, 15% brand colour in brand moments */
+  --red: #e2422c; /* oklch(0.61 0.20 31)  Cabana Red   */
+  --blue: #489dd8; /* oklch(0.67 0.12 242) Riviera Blue */
+  --haze: #dff2fd; /* oklch(0.95 0.025 235) Haze        */
+  --palm: #0f4230; /* oklch(0.34 0.062 165) Palm        */
+  --ink: #14191e; /* oklch(0.21 0.012 250) Ink         */
+  --rule: rgba(20, 25, 30, 0.12);
+
+  /* type: Funnel Sans standing in for Plain. 450 ≈ Plain Regular, 600 ≈ Plain Medium */
+  --font: 'Funnel Sans', system-ui, sans-serif;
+  --w-reg: 450;
+  --w-med: 600;
+
+  /* motion tokens, measured from the reference */
+  --arrive: cubic-bezier(0.16, 1, 0.3, 1); /* expo.out: things entering */
+  --glide: cubic-bezier(0.65, 0, 0.35, 1); /* power3.inOut: on-screen A→B */
+  --leave: cubic-bezier(0.55, 0, 1, 0.45); /* power2.in: things leaving */
+
+  --gut: 36px;
+  --bar: 64px;
+}
+@media (max-width: 767px) {
+  :root {
+    --gut: 20px;
+    --bar: 56px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+h1, h2, h3, h4, p, ul, ol, li, figure, blockquote {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+img,
+svg {
+  max-width: 100%;
+}
+
+html {
+  background: #fff;
+  color: var(--ink);
+  font: var(--w-reg) 16px/1.4 var(--font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html.menu-lock {
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  font-family: var(--font);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ============ lockup ============ */
+.lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.lockup svg {
+  width: 36px;
+  height: auto;
+  display: block;
+}
+.lockup-word {
+  font: var(--w-med) 15px/1 var(--font);
+  letter-spacing: 0.08em;
+  margin-right: -0.08em;
+}
+
+/* ============ site header ============ */
+.sh {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 10;
+  height: var(--bar);
+  padding: 0 var(--gut);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  font: var(--w-med) 14px/1 var(--font);
+  letter-spacing: -0.01em;
+}
+.sh.light {
+  background: #fff;
+  border-bottom: 1px solid var(--rule);
+}
+.sh.dark {
+  color: #fff;
+}
+.sh.onred {
+  color: var(--ink);
+}
+.sh-nav {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+.sh-nav.r {
+  justify-content: flex-end;
+}
+.sh-burger {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  margin: 0 4px 0 -2px;
+}
+.sh-burger i {
+  width: 22px;
+  height: 12px;
+  border-top: 1.6px solid currentColor;
+  border-bottom: 1.6px solid currentColor;
+  transition: height 0.4s var(--glide);
+}
+.sh-burger:hover i {
+  height: 8px;
+}
+.sh-lock {
+  display: block;
+}
+@media (max-width: 767px) {
+  .sh-hide-m {
+    display: none;
+  }
+  .lockup svg {
+    width: 30px;
+  }
+  .lockup-word {
+    font-size: 13px;
+  }
+}
+
+/* ============ tile menu ============ */
+.tm {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-rows: var(--bar) minmax(0, 1fr) 48px;
+  color: #fff;
+}
+.tm:focus {
+  outline: none;
+}
+.tm-curtain {
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  clip-path: inset(0% 0% 100% 0%);
+}
+.tm-bar {
+  position: relative;
+  padding: 0 var(--gut);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  font: var(--w-med) 14px/1 var(--font);
+  letter-spacing: -0.01em;
+}
+.tm-close {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 32px;
+  margin-left: -2px; /* same spot as the header burger */
+}
+.tm-x {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  transition: transform 0.5s var(--glide);
+}
+.tm-x b {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1.6px;
+  margin-top: -0.8px;
+  background: currentColor;
+}
+.tm-x b:first-child {
+  transform: translateY(-5.2px);
+}
+.tm-x b:last-child {
+  transform: translateY(5.2px);
+}
+@media (hover: hover) {
+  .tm-close:hover .tm-x {
+    transform: rotate(90deg);
+  }
+}
+.tm-bag {
+  justify-self: end;
+}
+
+.tm-tiles {
+  position: relative;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+.tm-tile {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.tm-tile.tone-ink {
+  color: var(--ink);
+}
+.tm-tile.tone-white {
+  color: #fff;
+}
+.tm-clip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  clip-path: inset(0% 0% 100% 0%);
+}
+.tm-tile:not(:last-child) .tm-clip {
+  right: -1px; /* overlap the next tile: no ink seam at fractional widths */
+}
+.tm-art {
+  /* fixed at the widest a tile gets, centred: widening reveals more, never rescales */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--art-w, 100%);
+  left: calc(50% - var(--art-w, 100%) / 2);
+  transform-origin: 50% 0;
+}
+.tm-tile {
+  contain: layout paint;
+}
+.tm-zoom {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+.tm-dim {
+  position: absolute;
+  inset: 0;
+  background: #0a0d10;
+  opacity: 0;
+  pointer-events: none;
+}
+.tm-zoom > img,
+.tm-zoom > svg,
+.tm-svg,
+.tm-svg > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.art-stripe .tm-art {
+  background: var(--haze);
+}
+.tm-hit {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.tm-hit:focus-visible {
+  outline-offset: -6px;
+}
+.tm-copy {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 22px;
+  z-index: 2;
+  pointer-events: none;
+}
+.tm-subs {
+  list-style: none;
+  margin: 0 0 26px;
+  padding: 0;
+  font: var(--w-reg) 15px/1.9 var(--font);
+}
+.tm-sub {
+  visibility: hidden;
+}
+.tm-sub a {
+  pointer-events: auto;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size 0.45s var(--glide);
+}
+.tm-sub a:hover,
+.tm-sub a:focus-visible {
+  background-size: 100% 1px;
+}
+.tm-num {
+  display: block;
+  margin-bottom: 10px;
+  font: var(--w-reg) 12px/1 var(--font);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  opacity: 0.72;
+}
+.tm-label {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  font: var(--w-med) clamp(26px, 2.4vw, 38px)/1.02 var(--font);
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+}
+.tm-label > span {
+  display: block;
+}
+
+.tm-foot {
+  position: relative;
+  padding: 0 var(--gut);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  font: var(--w-reg) 12px/1 var(--font);
+  color: rgba(255, 255, 255, 0.6);
+}
+.tm-foot a:hover {
+  color: #fff;
+}
+.tm-social {
+  display: flex;
+  gap: 22px;
+}
+
+@media (max-width: 767px) {
+  .tm {
+    grid-template-rows: var(--bar) minmax(0, 1fr) auto;
+  }
+  .tm-tiles {
+    flex-direction: column;
+  }
+  .tm-tile:not(:last-child) .tm-clip {
+    right: 0;
+    bottom: -1px;
+  }
+  .tm-art {
+    left: 0;
+    width: 100%;
+  }
+  .tm-copy {
+    left: var(--gut);
+    right: var(--gut);
+    bottom: 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .tm-num {
+    order: 2;
+    margin: 0;
+  }
+  .tm-subs {
+    display: none;
+  }
+  .tm-label {
+    font-size: 30px;
+  }
+  .tm-foot {
+    padding: 16px var(--gut) calc(18px + env(safe-area-inset-bottom));
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  .tm-foot > span:nth-child(2) {
+    display: none;
+  }
+}
+
+/* ============ placeholder home ============ */
+.ph-home {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: var(--bar) var(--gut) 0;
+  text-align: center;
+}
+.ph-home p {
+  margin: 0;
+  font: var(--w-reg) 13px/1.4 var(--font);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(20, 25, 30, 0.5);
+}
