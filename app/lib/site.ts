@@ -19,7 +19,7 @@ type Seo = {title?: string; description?: string; path?: string; image?: string;
 
 /** Title, description, canonical and share cards for a route's meta export. */
 export function seo({title, description = SITE.description, path = '/', image = '/og/og-default.jpg', type = 'website'}: Seo = {}) {
-  const full = title ? `${title} — ${SITE.name}` : `${SITE.name} — ${SITE.tagline}`;
+  const full = title ? `${title} · ${SITE.name}` : SITE.name;
   const url = SITE.url + path;
   const img = image.startsWith('http') ? image : SITE.url + image;
   return [

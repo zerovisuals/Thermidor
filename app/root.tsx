@@ -53,7 +53,7 @@ export const shouldRevalidate: ShouldRevalidateFunction = ({
  */
 // fallback when a route errors before its own meta can run (404s, 500s)
 export const meta: Route.MetaFunction = ({error}) => [
-  {title: error ? (isRouteErrorResponse(error) && error.status === 404 ? 'Not found — Thermidor' : 'Error — Thermidor') : 'Thermidor — Riviera sportswear'},
+  {title: error ? (isRouteErrorResponse(error) && error.status === 404 ? 'Not found · Thermidor' : 'Error · Thermidor') : 'Thermidor'},
 ];
 
 export function links() {
