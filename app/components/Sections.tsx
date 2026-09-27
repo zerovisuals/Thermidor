@@ -69,7 +69,7 @@ export function Hero() {
       </svg>
       <h1 className="hero-word wm">THERMIDOR</h1>
       <div className="hero-foot">
-        <span className="hero-cap">SS27 &middot; The Cabana Edit</span>
+        <span className="hero-cap">Chapter 1 &middot; The Walkout</span>
         <div className="hero-pills">
           <Link to="/collections/men" className="pill glass">Men</Link>
           <Link to="/collections/women" className="pill glass">Women</Link>
@@ -89,10 +89,10 @@ export function Manifesto({kicker = false}: {kicker?: boolean}) {
       <div className="mani">
         {kicker && <span className="kick" data-reveal="up">The house</span>}
         <p data-reveal="lines">
-          Thermidor is Riviera sportswear for the long&nbsp;lunch. Club cuts from the 1960s, worn boxier and a little louder, in the colours of the beach club.
+          We were on the menu once. Silver tray, white tablecloth, everyone sitting up straight. So we walked out, past the waiters and down to the&nbsp;sea.
         </p>
         <p className="red" data-reveal="lines" data-delay="0.15">
-          Long lunches, short&nbsp;sleeves.
+          Long lunches, short sleeves, and making things for no&nbsp;reason.
         </p>
       </div>
     </section>
@@ -106,7 +106,7 @@ export function FirstDrop() {
     <section className="drop">
       <div className="drop-h">
         <h2 data-reveal="lines">
-          First drop<sup>04</sup>
+          The Walkout<sup>04</sup>
         </h2>
         <Link to="/collections/all" className="u" data-reveal="up">
           Shop all
@@ -233,7 +233,7 @@ export function ClubInvite({as = 'section'}: {as?: 'section' | 'div'}) {
           <br />
           at the club.
         </h2>
-        <p data-reveal="up">Everyone&rsquo;s invited. First look at every drop, and a seat at the long&nbsp;lunch.</p>
+        <p data-reveal="up">Everyone&rsquo;s invited. Postcards from the lobster&rsquo;s summer, first look at every drop. Bring something you&nbsp;made.</p>
         <div data-reveal="up" data-delay="0.1">
           <NewsForm source="home-club" />
         </div>
