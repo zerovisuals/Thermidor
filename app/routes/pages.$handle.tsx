@@ -71,7 +71,7 @@ const TEXT: Record<string, TextPage> = {
   journal: {
     kicker: 'The long lunch',
     title: 'Journal',
-    body: <p>Notes from the club: the places, the people and the long lunches behind each drop. The first entries arrive with SS27.</p>,
+    body: <p>Postcards from the lobster’s summer: what it made, who it met, where lunch ran long. The first ones arrive with Chapter 1.</p>,
   },
 };
 
@@ -89,7 +89,7 @@ export const meta: Route.MetaFunction = ({data}) => {
     h === 'the-club'
       ? 'See you at the club. Everyone’s invited: first look at every Thermidor drop, and a seat at the long lunch.'
       : h === 'the-house'
-        ? 'Thermidor is Riviera sportswear for the long lunch: club cuts from the 1960s, in the colours of the beach club.'
+        ? 'The lobster that walked off the menu: why Thermidor exists, and what it believes.'
         : undefined;
   return seo({title: t ?? 'Page', description: d, path: `/pages/${h}`});
 };
@@ -121,22 +121,22 @@ function House() {
         <div className="house-body">
           <span className="kick" data-reveal="up">The house</span>
           <p className="house-lead" data-reveal="lines">
-            Thermidor is Riviera sportswear for the long&nbsp;lunch. Club cuts from the 1960s, worn boxier and a little louder, in the colours of the beach&nbsp;club.
+            Lobster Thermidor is the stiffest plate on a Riviera menu. Thermidor is also the name of high summer. One day the lobster on that plate decided it was done being dinner, walked out past the waiters, and spent the whole of Thermidor on the&nbsp;beach.
           </p>
-          <p className="house-red" data-reveal="lines" data-delay="0.12">Long lunches, short&nbsp;sleeves.</p>
+          <p className="house-red" data-reveal="lines" data-delay="0.12">Everyone&rsquo;s invited. Bring something you&nbsp;made.</p>
         </div>
         <div className="house-cols" data-reveal="stagger">
           <div>
-            <h3><i style={{background: 'var(--palm)'}} />Heritage</h3>
-            <p>Club cuts from the 1960s. Piqu&eacute;, waffle knit, heavy fleece.</p>
+            <h3><i style={{background: 'var(--palm)'}} />Enjoy it</h3>
+            <p>Long lunches, short sleeves. Take the day slowly and most things playfully.</p>
           </div>
           <div>
-            <h3><i style={{background: 'var(--blue)'}} />Riviera</h3>
-            <p>Colour taken from the beach club: the red, the sky, the palms. Nothing neon.</p>
+            <h3><i style={{background: 'var(--blue)'}} />Make things</h3>
+            <p>Everyone is made to create. Sandcastles count. Do your own thing, not the thing next to you.</p>
           </div>
           <div>
-            <h3><i style={{background: 'var(--red)'}} />Street</h3>
-            <p>Worn boxier, shorter and louder. The crest goes big on the&nbsp;back.</p>
+            <h3><i style={{background: 'var(--red)'}} />No dress code</h3>
+            <p>The Riviera&rsquo;s colours and stripes, without the velvet rope. Worn boxy, loud and a little sandy.</p>
           </div>
         </div>
       </section>

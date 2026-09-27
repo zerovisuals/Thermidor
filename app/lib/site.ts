@@ -4,7 +4,7 @@ export const SITE = {
   url: 'https://thermidor.club',
   tagline: 'Riviera sportswear',
   description:
-    'Riviera sportswear for the long lunch. Club cuts from the 1960s, worn boxier and a little louder, in the colours of the beach club.',
+    'The lobster that walked off the menu. Riviera sportswear for long lunches, short sleeves and making things for no reason. Everyone’s invited.',
   email: 'hello@thermidor.club',
   social: {
     instagram: 'https://instagram.com/thermidorclub',

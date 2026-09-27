@@ -95,9 +95,9 @@ export const CATEGORIES = [
 
 /** Men / Women carry the same unisex drop for now; the split is the edit, not the stock. */
 export const COLLECTIONS: Record<string, {title: string; kicker: string; filter: (p: Product) => boolean}> = {
-  all: {title: 'First drop', kicker: 'SS27', filter: () => true},
-  men: {title: 'Men', kicker: 'SS27 · First drop', filter: () => true},
-  women: {title: 'Women', kicker: 'SS27 · First drop', filter: () => true},
+  all: {title: 'The Walkout', kicker: 'Chapter 1', filter: () => true},
+  men: {title: 'Men', kicker: 'Chapter 1 · The Walkout', filter: () => true},
+  women: {title: 'Women', kicker: 'Chapter 1 · The Walkout', filter: () => true},
   ...Object.fromEntries(
     CATEGORIES.map((c) => [c.handle, {title: c.title, kicker: 'SS27', filter: (p: Product) => p.category === c.handle}]),
   ),
