@@ -89,10 +89,10 @@ export function Manifesto({kicker = false}: {kicker?: boolean}) {
       <div className="mani">
         {kicker && <span className="kick" data-reveal="up">The house</span>}
         <p data-reveal="lines">
-          We were on the menu once. Silver tray, white tablecloth, everyone sitting up straight. So we walked out, past the waiters and down to the&nbsp;sea.
+          Riviera sportswear for long lunches, short sleeves and making things for no reason. Club cuts from the 1960s, worn boxier and a little&nbsp;louder.
         </p>
         <p className="red" data-reveal="lines" data-delay="0.15">
-          Long lunches, short sleeves, and making things for no&nbsp;reason.
+          Everyone&rsquo;s&nbsp;invited.
         </p>
       </div>
     </section>
@@ -233,7 +233,7 @@ export function ClubInvite({as = 'section'}: {as?: 'section' | 'div'}) {
           <br />
           at the club.
         </h2>
-        <p data-reveal="up">Everyone&rsquo;s invited. Postcards from the lobster&rsquo;s summer, first look at every drop. Bring something you&nbsp;made.</p>
+        <p data-reveal="up">First look at every drop, and a seat at the long lunch. Bring something you&nbsp;made.</p>
         <div data-reveal="up" data-delay="0.1">
           <NewsForm source="home-club" />
         </div>
