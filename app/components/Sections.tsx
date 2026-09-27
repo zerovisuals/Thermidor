@@ -233,7 +233,7 @@ export function ClubInvite({as = 'section'}: {as?: 'section' | 'div'}) {
           <br />
           at the club.
         </h2>
-        <p data-reveal="up">Early access to every drop, and an invitation to the long&nbsp;lunch.</p>
+        <p data-reveal="up">Everyone&rsquo;s invited. First look at every drop, and a seat at the long&nbsp;lunch.</p>
         <div data-reveal="up" data-delay="0.1">
           <NewsForm source="home-club" />
         </div>

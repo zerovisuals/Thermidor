@@ -87,7 +87,7 @@ export const meta: Route.MetaFunction = ({data}) => {
   const t = h === 'the-club' ? 'The Club' : h === 'the-house' ? 'The House' : TEXT[h]?.title;
   const d =
     h === 'the-club'
-      ? 'See you at the club. Early access to every Thermidor drop, and an invitation to the long lunch.'
+      ? 'See you at the club. Everyone’s invited: first look at every Thermidor drop, and a seat at the long lunch.'
       : h === 'the-house'
         ? 'Thermidor is Riviera sportswear for the long lunch: club cuts from the 1960s, in the colours of the beach club.'
         : undefined;
