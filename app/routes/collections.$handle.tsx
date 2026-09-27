@@ -14,7 +14,7 @@ export const meta: Route.MetaFunction = ({data, params}) =>
   seo({
     title: data?.title ?? 'Shop',
     path: `/collections/${params.handle}`,
-    description: `${data?.title ?? 'The Walkout'}: Riviera sportswear from Thermidor. Polos, henleys, hoodies and the Cabana Belt.`,
+    description: `${data?.title ?? 'Arrière-saison'}: Riviera sportswear from Thermidor. Polos, henleys, hoodies and the Cabana Belt.`,
   });
 
 export default function Collection() {

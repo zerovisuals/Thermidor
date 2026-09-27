@@ -71,7 +71,7 @@ const TEXT: Record<string, TextPage> = {
   journal: {
     kicker: 'The long lunch',
     title: 'Journal',
-    body: <p>Postcards from the lobster’s summer: what it made, who it met, where lunch ran long. The first ones arrive with Chapter 1.</p>,
+    body: <p>Postcards from the lobster’s summer: what it made, who it met, where lunch ran long. The first ones arrive with Chapter 1: the late season on an emptying coast.</p>,
   },
 };
 
@@ -121,7 +121,7 @@ function House() {
         <div className="house-body">
           <span className="kick" data-reveal="up">The house</span>
           <p className="house-lead" data-reveal="lines">
-            Lobster Thermidor is the stiffest plate on a Riviera menu. Thermidor is also the name of high summer. One day the lobster on that plate decided it was done being dinner, walked out past the waiters, and spent the whole of Thermidor on the&nbsp;beach.
+            Lobster Thermidor is the stiffest plate on a Riviera menu. Thermidor is also the name of high summer. One day the lobster on that plate decided it was done being dinner, walked out past the waiters, and spent the whole of Thermidor on the beach. When summer ended, it&nbsp;stayed.
           </p>
           <p className="house-red" data-reveal="lines" data-delay="0.12">Everyone&rsquo;s invited. Bring something you&nbsp;made.</p>
         </div>

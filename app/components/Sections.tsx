@@ -31,7 +31,7 @@ export function Hero() {
           .from('.hero-art.m .hero-mark', {scale: 1.18, rotate: -4, svgOrigin: '240 356', duration: 1.8, ease: EASE.arrive}, 0)
           .from('.hero-skyimg', {y: 90, duration: 2.2, ease: EASE.arrive}, 0)
           .from(word.chars, {yPercent: 110, duration: 1.1, ease: EASE.arrive, stagger: 0.045}, 0.25)
-          .from('.hero-foot > *', {y: 18, opacity: 0, duration: 0.9, ease: EASE.arrive, stagger: 0.08}, 0.6);
+          .from('.hero-foot > *', {y: 18, opacity: 0, duration: 0.9, ease: EASE.arrive, stagger: 0.08}, 0.35);
         // scroll away: the lobster lifts slower than the page, the name faster
         gsap.to('.hero-art', {yPercent: 14, ease: 'none', scrollTrigger: {trigger: el, start: 'top top', end: 'bottom top', scrub: true}});
         gsap.to('.hero-word', {yPercent: -60, ease: 'none', scrollTrigger: {trigger: el, start: 'top top', end: 'bottom top', scrub: true}});
@@ -69,10 +69,10 @@ export function Hero() {
       </svg>
       <h1 className="hero-word wm">THERMIDOR</h1>
       <div className="hero-foot">
-        <span className="hero-cap">Chapter 1 &middot; The Walkout</span>
+        <span className="hero-cap">Chapter 1 &middot; Arri&egrave;re-saison &middot; Out now</span>
         <div className="hero-pills">
-          <Link to="/collections/men" className="pill glass">Men</Link>
-          <Link to="/collections/women" className="pill glass">Women</Link>
+          <Link to="/collections/men" className="pill glass">Shop Men</Link>
+          <Link to="/collections/women" className="pill glass">Shop Women</Link>
         </div>
       </div>
     </section>
@@ -100,16 +100,28 @@ export function Manifesto({kicker = false}: {kicker?: boolean}) {
 }
 
 /* ============ W3 on the home page: the drop, with the stripe breaking the grid ============ */
+/* ============ reassurance at the moment of hesitation: right under the products ============ */
+export function TrustStrip() {
+  return (
+    <ul className="trust" data-reveal="stagger">
+      <li><b>Free EU shipping</b> over &euro;150</li>
+      <li><b>30-day returns</b>, collected from your door</li>
+      <li><b>Made in Portugal</b> &amp; Italy</li>
+      <li><b>Boxy fit</b>, take your usual size</li>
+    </ul>
+  );
+}
+
 export function FirstDrop() {
   const [polo, henley, hoodie] = PRODUCTS;
   return (
     <section className="drop">
       <div className="drop-h">
         <h2 data-reveal="lines">
-          The Walkout<sup>04</sup>
+          Arri&egrave;re-saison<sup>04</sup>
         </h2>
-        <Link to="/collections/all" className="u" data-reveal="up">
-          Shop all
+        <Link to="/collections/all" className="pill solid drop-cta" data-reveal="up">
+          Shop all 04
         </Link>
       </div>
       <div className="pgrid" data-reveal="stagger">
@@ -137,7 +149,7 @@ export function CategoryScroller() {
       ScrollTrigger.create({
         trigger: el,
         start: 'top top',
-        end: () => `+=${innerHeight * 0.7 * n}`,
+        end: () => `+=${innerHeight * 0.45 * n}`,
         pin: true,
         onUpdate: (s) => {
           setOn(Math.min(n - 1, Math.floor(s.progress * n)));

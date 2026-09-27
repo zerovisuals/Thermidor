@@ -260,8 +260,8 @@ sup {
 /* ---------- 02 manifesto ---------- */
 .mani-s {
   position: relative;
-  height: min(56.25vw, 100svh);
-  min-height: 560px;
+  height: min(40vw, 72svh);
+  min-height: 460px;
   overflow: hidden;
   background: #fff;
 }
@@ -1689,4 +1689,30 @@ sup {
   .search form {
     padding: 0 20px 20px;
   }
+}
+
+/* ---------- sell-first home ---------- */
+.drop { padding-top: 72px; }
+.drop-cta { height: 44px; min-width: 0; padding: 0 22px; font-size: 14px; background: var(--ink) !important; color: #fff !important; box-shadow: none !important; }
+.trust {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  margin-top: -64px;
+  margin-bottom: 0;
+}
+.trust li {
+  padding: 18px var(--gut);
+  font: var(--w-reg) 13px/1.35 var(--font);
+  color: rgba(20, 25, 30, 0.62);
+  border-left: 1px solid var(--rule);
+}
+.trust li:first-child { border-left: 0; }
+.trust b { color: var(--ink); font-weight: var(--w-med); }
+@media (max-width: 767px) {
+  .trust { grid-template-columns: 1fr 1fr; margin-top: -40px; }
+  .trust li { padding: 14px 20px; border-left: 0; border-top: 1px solid var(--rule); }
+  .trust li:nth-child(-n + 2) { border-top: 0; }
+  .trust li:nth-child(even) { border-left: 1px solid var(--rule); }
 }

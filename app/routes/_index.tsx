@@ -1,6 +1,6 @@
 import type {Route} from './+types/_index';
 import {SITE, seo} from '~/lib/site';
-import {CategoryScroller, ClubInvite, FirstDrop, Hero, Manifesto} from '~/components/Sections';
+import {CategoryScroller, ClubInvite, FirstDrop, Hero, Manifesto, TrustStrip} from '~/components/Sections';
 
 export const meta: Route.MetaFunction = () => [
   ...seo(),
@@ -21,10 +21,12 @@ export const handle = {header: 'onred', club: true};
 export default function Home() {
   return (
     <>
+      {/* sell first: the drop within one scroll, reassurance under it, the brand after */}
       <Hero />
-      <Manifesto />
       <FirstDrop />
+      <TrustStrip />
       <CategoryScroller />
+      <Manifesto />
       <ClubInvite />
     </>
   );
