@@ -583,23 +583,6 @@ sup {
   vertical-align: 0.9em;
   margin-left: 6px;
 }
-.cs[data-on='3'] .cs-list li {
-  color: rgba(20, 25, 30, 0.3);
-  text-shadow: none;
-}
-.cs[data-on='3'] .cs-list li.on,
-.cs[data-on='3'] .cs-list li a:hover {
-  color: var(--ink);
-}
-.cs[data-on='3'] .rail {
-  color: var(--ink);
-}
-.cs[data-on='3'] .rail i {
-  background: rgba(20, 25, 30, 0.2);
-}
-.cs[data-on='3'] .rail i b {
-  background: var(--ink);
-}
 .cs-pill {
   position: absolute;
   left: 50%;

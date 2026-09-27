@@ -5,7 +5,7 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {SplitText} from 'gsap/SplitText';
 import {NewsForm, ProductCard, Sky, StripeEdit} from '~/components/Site';
 import {CATEGORIES, PRODUCTS} from '~/lib/catalog';
-import {parasol, stripeArt} from '~/lib/art';
+import {parasol} from '~/lib/art';
 import {EASE, reducedMotion, registerMotion} from '~/lib/motion';
 
 const afterFonts = (fn: () => void) => {
@@ -53,7 +53,7 @@ export function Hero() {
           </mask>
         </defs>
         <g mask="url(#hero-m)">
-          <image className="hero-skyimg" href="/sky/hero-wide.webp" x="0" y="-60" width="1600" height="1020" preserveAspectRatio="xMidYMid slice" />
+          <image className="hero-skyimg" href="/sky/herob-wide.webp" x="0" y="-60" width="1600" height="1020" preserveAspectRatio="xMidYMid slice" />
         </g>
       </svg>
       <svg className="hero-art m" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -64,7 +64,7 @@ export function Hero() {
           </mask>
         </defs>
         <g mask="url(#hero-mm)">
-          <image className="hero-skyimg" href="/sky/web1-tall.webp" x="0" y="-40" width="390" height="924" preserveAspectRatio="xMidYMid slice" />
+          <image className="hero-skyimg" href="/sky/herob-tall.webp" x="0" y="-40" width="390" height="924" preserveAspectRatio="xMidYMid slice" />
         </g>
       </svg>
       <h1 className="hero-word wm">THERMIDOR</h1>
@@ -173,9 +173,7 @@ export function CategoryScroller() {
       <div className="cs-bg" style={{opacity: 1}}><Sky name="web4" /></div>
       <div className="cs-bg"><Sky name="web1" /></div>
       <div className="cs-bg"><Sky name="hero" /></div>
-      <div className="cs-bg cs-stripe">
-        <div dangerouslySetInnerHTML={{__html: stripeArt({W: 1600, H: 900, id: 'cs-st', band: 190, drop: 0.52, angle: -7, fringeLen: 60, fringeStep: 3.6, fringeW: 2.6})}} />
-      </div>
+      <div className="cs-bg"><Sky name="dusk" /></div>
       <ul className="cs-list">
         {CATEGORIES.map((c, i) => (
           <li key={c.handle} className={i === on ? 'on' : ''}>

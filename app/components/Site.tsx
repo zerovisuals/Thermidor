@@ -7,8 +7,8 @@ import {SITE} from '~/lib/site';
 import {parasol, stripeArt} from '~/lib/art';
 
 /* ---------- sky: a rendered shader frame + live grain on top ---------- */
-type SkyName = 'hero' | 'web1' | 'web4' | 'slot' | 'bleed';
-const TALL: Partial<Record<SkyName, string>> = {hero: 'hero', web1: 'web1', web4: 'web4', slot: 'slot'};
+type SkyName = 'hero' | 'herob' | 'dusk' | 'web1' | 'web4' | 'slot' | 'bleed';
+const TALL: Partial<Record<SkyName, string>> = {hero: 'hero', herob: 'herob', dusk: 'dusk', web1: 'web1', web4: 'web4', slot: 'slot'};
 
 export function Sky({name, className = '', grain = true, eager = false}: {name: SkyName; className?: string; grain?: boolean; eager?: boolean}) {
   const tall = TALL[name];
